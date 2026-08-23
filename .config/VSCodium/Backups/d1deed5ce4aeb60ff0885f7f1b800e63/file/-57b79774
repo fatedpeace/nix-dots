@@ -1,0 +1,14 @@
+file:///home/havoc/dotfiles/.config/hypr/hyprland.lua {"mtime":1787474878653,"ctime":1787472806740,"size":366,"etag":"3gi1efnr4bp","orphaned":false,"typeId":""}
+
+require("modules.autostart")
+require("modules.animations")
+require("modules.environment-variables")
+require("modules.input")
+require("modules.keybinds")
+require("modules.layout")
+require("modules.look-and-feel")
+require("modules.monitors")
+require("modules.permissions")
+require("modules.programs")
+require("modules.windows-and-workspaces")
+require("modules.misc")
