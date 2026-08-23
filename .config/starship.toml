@@ -1,0 +1,13 @@
+format = """
+$directory\
+$line_break\
+$character"""
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "white"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
