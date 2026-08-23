@@ -1,0 +1,8 @@
+file:///home/havoc/dotfiles/.config/hypr/modules/programs.lua {"mtime":1787472806740,"ctime":1787472806740,"size":177,"etag":"3gi1bhp8p5m","orphaned":false,"typeId":""}
+--------------------
+----MY PROGRAMS ----
+--------------------
+
+local terminal = "kitty"
+local fileManger = "yazi"
+local editor = "codium"
