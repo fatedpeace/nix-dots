@@ -1,3 +1,4 @@
+file:///home/havoc/dotfiles/.config/hypr/modules/look-and-feel.lua {"mtime":1787475872953,"ctime":1787472806740,"size":1404,"etag":"3gi1frh6a1e9","orphaned":false,"typeId":""}
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -40,7 +41,7 @@ hl.config({
         },
 
         blur = {
-            enabled   = false,
+            enabled   = true,
             xray =  false,
             special = false,
             ignore_opacity = true, 

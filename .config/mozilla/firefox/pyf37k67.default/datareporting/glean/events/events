@@ -14,3 +14,5 @@
 {"timestamp":4122613,"category":"serp","name":"ad_impression","extra":{"impression_id":"910987e9-c78f-4804-8e61-fe4093b0a58d","ads_loaded":"1","ads_visible":"1","component":"shopping_tab","ads_hidden":"0","glean_timestamp":"1787475674251"}}
 {"timestamp":4122613,"category":"serp","name":"ad_impression","extra":{"component":"ad_link","ads_visible":"1","ads_loaded":"1","ads_hidden":"0","glean_timestamp":"1787475674251","impression_id":"910987e9-c78f-4804-8e61-fe4093b0a58d"}}
 {"timestamp":4130046,"category":"serp","name":"abandonment","extra":{"reason":"navigation","impression_id":"910987e9-c78f-4804-8e61-fe4093b0a58d","glean_timestamp":"1787475681684"}}
+{"timestamp":4386716,"category":"bookmarks","name":"sidebar_toggle","extra":{"version":"old","glean_timestamp":"1787475938354","opened":"true"}}
+{"timestamp":4411367,"category":"bookmarks","name":"sidebar_toggle","extra":{"version":"old","glean_timestamp":"1787475963005","opened":"false"}}
