@@ -42,7 +42,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 170,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -57,7 +57,7 @@
                 "x": 0,
                 "y": 0,
                 "width": 1912,
-                "height": 1072,
+                "height": 2144,
                 "zoomLevel": 3
             }
         },
@@ -69,7 +69,7 @@
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "ac47756482eb956af96fe1ae8b52f9b3": {
-                    "sideBarVisible": false,
+                    "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
             }
