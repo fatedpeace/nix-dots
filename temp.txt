@@ -1,0 +1,471 @@
+# Quickshell Dynamic Island Project — Chat Summary
+
+## Goal
+
+I'm learning **Quickshell/QML by building a custom Dynamic Island-style UI**, rather than a traditional always-visible desktop bar.
+
+The idea is inspired by macOS/iPhone-style Dynamic Island behavior:
+
+* Normally, show only minimal information.
+* Example idle state:
+
+  * Time
+  * Workspace emoji/symbol
+  * Song name/artist if media is playing
+* When something happens, temporarily replace the normal content with an OSD-style animation.
+
+  * Volume change → volume percentage + slider
+  * Brightness change → brightness indicator
+  * Workspace change → workspace indicator
+  * Notifications → temporary notification
+* Clicking the island expands it into a larger menu containing things such as:
+
+  * Wi-Fi
+  * Time
+  * Music controls
+  * Audio
+  * Power menu
+  * Notifications
+  * Battery
+* Eventually, moving the cursor toward the top could reveal/show the island instead of having it permanently take up space.
+
+Example normal state:
+
+```text
+╭────────────────────────────────────╮
+│  20:52   🌿   lalala - bbno&       │
+╰────────────────────────────────────╯
+```
+
+When no media is playing:
+
+```text
+╭────────────────────╮
+│  20:52   🌿        │
+╰────────────────────╯
+```
+
+When volume changes:
+
+```text
+╭────────────────────────╮
+│       🔊 67%           │
+│   ━━━━━━━━━░░░         │
+╰────────────────────────╯
+```
+
+Then it returns to the normal state after a timeout.
+
+## Important Learning Preference
+
+I **do not want complete answers/code immediately**.
+
+I want to **learn how Quickshell and QML work** and figure things out myself.
+
+When helping me:
+
+* Explain concepts.
+* Point me toward the relevant documentation.
+* Give hints and questions that help me reason it out.
+* Let me experiment.
+* Help debug what I write.
+* Don't just give me the final solution unless I'm stuck or specifically ask for it.
+
+The goal is to understand QML/Quickshell, not just copy snippets.
+
+---
+
+# Current Quickshell Knowledge
+
+## `PanelWindow`
+
+I'm using a `PanelWindow` for the Dynamic Island.
+
+Important distinction:
+
+* `PanelWindow` controls the **window/screen behavior**.
+* A `Rectangle` inside it controls the **visual appearance**.
+
+Mental model:
+
+```text
+PanelWindow
+├── position
+│   ├── anchors
+│   └── margins
+├── size
+│   ├── implicitWidth
+│   └── implicitHeight
+└── Rectangle
+    └── visual island
+```
+
+`PanelWindow` is a Quickshell type.
+
+`Rectangle` is a Qt Quick type.
+
+Imports:
+
+```qml
+import Quickshell
+import QtQuick
+```
+
+---
+
+# PanelWindow Properties Learned
+
+## `implicitWidth` / `implicitHeight`
+
+These define the size of the PanelWindow.
+
+For example:
+
+```qml
+implicitWidth: 500
+implicitHeight: 40
+```
+
+means the PanelWindow is 500×40.
+
+## `margins`
+
+Margins offset the window from an anchored screen edge.
+
+If:
+
+```qml
+anchors.top: true
+```
+
+then:
+
+```qml
+margins.top: 8
+```
+
+moves it 8px away from the top.
+
+General rule:
+
+```text
+top anchor    → margins.top
+bottom anchor → margins.bottom
+left anchor   → margins.left
+right anchor  → margins.right
+```
+
+The Quickshell docs say margins only apply to edges with anchors.
+
+You can set one side directly:
+
+```qml
+margins.top: 5
+```
+
+instead of:
+
+```qml
+margins: [0, 5, 0, 0]
+```
+
+Also, QML property declarations use `:` rather than `=`:
+
+```qml
+margins.top: 5
+```
+
+not:
+
+```qml
+margins.top = 5
+```
+
+## `exclusiveZone`
+
+This controls how much space the compositor reserves for the panel.
+
+For development, I'm currently deliberately using:
+
+```qml
+exclusiveZone: 40
+```
+
+so I can clearly see the island.
+
+Eventually, because this is supposed to be a floating Dynamic Island rather than a traditional bar, I expect to experiment with:
+
+```qml
+exclusiveZone: 0
+```
+
+so applications don't get pushed down.
+
+Important distinction:
+
+* `implicitHeight` → size of the Quickshell window
+* `exclusiveZone` → screen space reserved by the compositor
+
+## `anchors`
+
+`PanelWindow` can be attached to screen edges.
+
+Current positioning:
+
+```qml
+anchors.top: true
+```
+
+I don't want left/right anchors because I don't want the island to stretch across the screen.
+
+---
+
+# Rectangle / QML Concepts Learned
+
+## QML Types
+
+This:
+
+```qml
+Rectangle {
+}
+```
+
+is **not a function**.
+
+`Rectangle` is a QML type.
+
+Writing:
+
+```qml
+PanelWindow {
+    Rectangle {
+    }
+}
+```
+
+creates a hierarchy:
+
+```text
+PanelWindow
+└── Rectangle
+```
+
+The Rectangle is a child object of the PanelWindow.
+
+It doesn't "modify" the PanelWindow itself.
+
+## Property Binding
+
+QML properties can depend on other properties.
+
+Example:
+
+```qml
+width: parent.width
+```
+
+means the width stays bound to the parent's width.
+
+This is different from just manually assigning a fixed number.
+
+The binding updates automatically if the referenced property changes.
+
+## `parent`
+
+For a child QML visual object, `parent` refers to its visual parent.
+
+So:
+
+```qml
+Rectangle {
+    width: parent.width
+}
+```
+
+means the Rectangle's width follows its parent.
+
+## Anchors
+
+I learned that:
+
+```qml
+anchors {
+    top: parent.top
+    left: parent.left
+    right: parent.right
+    bottom: parent.bottom
+}
+```
+
+can be shortened to:
+
+```qml
+anchors.fill: parent
+```
+
+The latter anchors all four sides to the parent.
+
+---
+
+# Current Code
+
+My current basic setup is approximately:
+
+```qml
+import Quickshell
+import QtQuick
+
+PanelWindow {
+
+    anchors.top: true
+
+    exclusiveZone: 40
+
+    margins.top: 8
+
+    implicitHeight: 40
+    implicitWidth: 500
+
+    Rectangle {
+        anchors.fill: parent
+
+        radius: height / 2
+
+        color: "red"
+    }
+}
+```
+
+I initially tried:
+
+```qml
+color: red
+```
+
+which didn't work because the color value needs to be represented correctly, e.g.:
+
+```qml
+color: "red"
+```
+
+---
+
+# Current Visual Result
+
+The red Rectangle is now visible and has successfully become a pill.
+
+Using:
+
+```qml
+radius: height / 2
+```
+
+works because the Rectangle is 40px high:
+
+```text
+height = 40
+40 / 2 = 20
+radius = 20
+```
+
+This produces the pill shape.
+
+Using `height / 2` is preferable to hardcoding `20` because if the island's height changes later, the radius can follow automatically.
+
+---
+
+# Current Issue / Next Thing to Learn
+
+When the Rectangle is visible, I also see a **white background around it**.
+
+The important realization is:
+
+```text
+PanelWindow
+└── Rectangle
+```
+
+The white area is the **PanelWindow's own background/surface**, while the red pill is the Rectangle inside the PanelWindow.
+
+So the next thing I need to learn is:
+
+> **How do I make the PanelWindow background transparent so that only the Rectangle/pill is visible?**
+
+The correct place to investigate is the Quickshell **`QsWindow`** documentation, because `PanelWindow` inherits from `QsWindow`.
+
+Look through the inherited properties for something related to:
+
+* background
+* color
+* transparency
+* opacity
+
+Don't just give me the property immediately — help me find and understand it.
+
+---
+
+# Documentation
+
+Quickshell:
+
+* PanelWindow docs:
+  https://quickshell.org/docs/v0.3.0/types/Quickshell/PanelWindow
+
+Qt Quick:
+
+* Rectangle documentation:
+  https://doc.qt.io/qt-6/qml-qtquick-rectangle.html
+
+The Quickshell docs explain that `PanelWindow` is a decorationless window attached to screen edges by anchors.
+
+The Qt Quick docs are where I should look for things like `Rectangle` properties such as:
+
+* `color`
+* `radius`
+* `border`
+* `gradient`
+* `antialiasing`
+
+---
+
+# Planned Project Structure
+
+Eventually I expect something along these lines:
+
+```text
+quickshell/
+├── shell.qml
+│
+└── Island/
+    ├── Island.qml
+    ├── States/
+    │   ├── Idle.qml
+    │   ├── Expanded.qml
+    │   ├── Volume.qml
+    │   ├── Brightness.qml
+    │   ├── Media.qml
+    │   └── Notification.qml
+    │
+    └── Modules/
+        ├── Clock.qml
+        ├── Workspace.qml
+        ├── Network.qml
+        ├── Audio.qml
+        ├── Battery.qml
+        └── Media.qml
+```
+
+But I am **not trying to build all of this yet**.
+
+Current focus:
+
+1. Understand `PanelWindow`
+2. Understand QML objects/children
+3. Understand property binding
+4. Understand anchors
+5. Get the island dimensions/position correct
+6. Make the Rectangle into a pill
+7. Make the PanelWindow background transparent
+8. Then start adding actual content
+
