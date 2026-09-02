@@ -1,0 +1,113 @@
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+
+    // ========================================================
+    // LOGO
+    // ========================================================
+
+    "logo": {
+        "type": "kitty-direct",
+        "source": "~/.config/fastfetch/logo/logo3.png",
+
+        "width": 28,
+        "height": 14,
+
+        "padding": {
+            "top": 0,
+            "left": 1
+        }
+    },
+
+
+    // ========================================================
+    // DISPLAY
+    // ========================================================
+
+    "display": {
+        "key": {
+            "width": 10
+        },
+
+        "size": {
+            "binaryPrefix": "jedec"
+        },
+
+        // No visible separator keeps the output clean.
+        "separator": ""
+    },
+
+
+    // ========================================================
+    // SYSTEM INFORMATION
+    // ========================================================
+
+    "modules": [
+        "break",
+
+        {
+            "type": "title",
+            "key": "usr",
+            "keyColor": "#CBA6F7",
+            "format": "{user-name}"
+        },
+
+        {
+            "type": "os",
+            "key": "os",
+            "keyColor": "#94E2D5",
+            "format": "{name}"
+        },
+
+        {
+            "type": "kernel",
+            "key": "ker",
+            "keyColor": "#74C7EC"
+        },
+
+        {
+            "type": "shell",
+            "key": "sh",
+            "keyColor": "#F5C2E7",
+            "format": "{pretty-name}"
+        },
+
+        "break",
+
+        {
+            "type": "wm",
+            "key": "wm",
+            "keyColor": "#89DCEB"
+        },
+
+        {
+            "type": "cpu",
+            "key": "cpu",
+            "keyColor": "#CBA6F7",
+            "format": "{name}"
+        },
+
+        {
+            "type": "gpu",
+            "key": "gpu",
+            "keyColor": "#A6E3A1",
+            "format": "{name}"
+        },
+
+        {
+            "type": "memory",
+            "key": "ram",
+            "keyColor": "#94E2D5",
+            "format": "{used} / {total}"
+        },
+
+        "break",
+
+        {
+            "type": "colors",
+            "symbol": "circle"
+        },
+
+        "break"
+    ]
+}

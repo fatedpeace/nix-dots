@@ -1,0 +1,13 @@
+file:///home/havoc/dotfiles/.config/quickshell/fhg {"mtime":1788338486698,"ctime":1788338486698,"size":0,"etag":"3gjehgg7q0","orphaned":false,"typeId":""}
+        property var workspaceIcons: [
+            "", // 1 - Terminal
+            "󰘐", // 2 - Code
+            "", // 3 - Documents
+            "", // 4 - Virtual Machine
+            "", // 5 - Files
+            "", // 6 - broswe
+            "", // 7 - Music / Media
+            "", // 8 - NixOS
+            "󰭹", // 9 - System / Config
+            ""  // 10 - Random / Scratch
+        ]

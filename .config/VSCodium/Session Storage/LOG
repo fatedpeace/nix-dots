@@ -1,2 +1,3 @@
-2026/08/30-21:48:17.542 f60 Creating DB /home/havoc/.config/VSCodium/Session Storage since it was missing.
-2026/08/30-21:48:17.546 f60 Reusing MANIFEST /home/havoc/.config/VSCodium/Session Storage/MANIFEST-000001
+2026/09/02-18:54:04.261 d7e Reusing MANIFEST /home/havoc/.config/VSCodium/Session Storage/MANIFEST-000001
+2026/09/02-18:54:04.261 d7e Recovering log #3
+2026/09/02-18:54:04.261 d7e Reusing old log /home/havoc/.config/VSCodium/Session Storage/000003.log 
