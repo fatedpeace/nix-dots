@@ -1,0 +1,241 @@
+
+@import "colors.rasi"
+
+/* ============================================================
+ * CONFIGURATION
+ * ============================================================ */
+
+configuration {
+    modi:                       "drun,run,window";
+    show-icons:                 true;
+
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c}";
+}
+
+
+/* ============================================================
+ * GLOBAL
+ * ============================================================ */
+
+* {
+    font:                       "Iosevka 11";
+
+    foreground:                 @on-surface;
+
+    background-color:           transparent;
+    text-color:                 @foreground;
+}
+
+
+/* ============================================================
+ * MAIN WINDOW
+ * ============================================================ */
+
+window {
+    transparency:               "real";
+
+    location:                   center;
+    anchor:                     center;
+
+    fullscreen:                 false;
+
+    width:                      500px;
+
+    enabled:                    true;
+
+    border:                     1px;
+    border-color:               rgba(255, 255, 255, 0.08);
+
+    border-radius:              18px;
+
+    /* Dark, solid background */
+    background-color:           #111111;
+
+    cursor:                     "default";
+}
+
+
+/* ============================================================
+ * MAIN CONTAINER
+ * ============================================================ */
+
+mainbox {
+    enabled:                    true;
+
+    spacing:                    10px;
+
+    padding:                    14px;
+
+    children:                   [ "inputbar", "listview" ];
+}
+
+
+/* ============================================================
+ * SEARCH BAR
+ * ============================================================ */
+
+inputbar {
+    enabled:                    true;
+
+    padding:                    12px 16px;
+
+    border:                     0px;
+
+    border-radius:              12px;
+
+    /* Slight contrast against the main panel */
+    background-color:           #1a1a1a;
+
+    children:                   [ "entry" ];
+}
+
+
+entry {
+    enabled:                    true;
+
+    cursor:                     text;
+
+    placeholder:                "Search...";
+    placeholder-color:          rgba(255, 255, 255, 0.35);
+
+    text-color:                 #ffffff;
+
+    background-color:           transparent;
+}
+
+
+/* ============================================================
+ * APPLICATION LIST
+ * ============================================================ */
+
+listview {
+    enabled:                    true;
+
+    columns:                    1;
+    lines:                      6;
+
+    cycle:                      true;
+    dynamic:                    true;
+
+    scrollbar:                  false;
+
+    layout:                     vertical;
+    reverse:                    false;
+
+    fixed-height:               true;
+    fixed-columns:              true;
+
+    spacing:                    5px;
+
+    border:                     0px;
+
+    background-color:           transparent;
+}
+
+
+/* ============================================================
+ * APPLICATION ELEMENTS
+ * ============================================================ */
+
+element {
+    enabled:                    true;
+
+    spacing:                    12px;
+
+    padding:                    10px 12px;
+
+    border-radius:              12px;
+
+    cursor:                     pointer;
+
+    background-color:           transparent;
+}
+
+
+/* ============================================================
+ * NORMAL
+ * ============================================================ */
+
+element normal.normal {
+    background-color:           transparent;
+    text-color:                 #eeeeee;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 #eeeeee;
+}
+
+
+/* ============================================================
+ * SELECTED
+ * ============================================================ */
+
+element selected.normal {
+    background-color:           #252525;
+    text-color:                 #ffffff;
+}
+
+
+/* ============================================================
+ * URGENT
+ * ============================================================ */
+
+element normal.urgent {
+    background-color:           #2a1717;
+    text-color:                 #ffffff;
+}
+
+element selected.urgent {
+    background-color:           #402020;
+    text-color:                 #ffffff;
+}
+
+
+/* ============================================================
+ * ACTIVE
+ * ============================================================ */
+
+element normal.active {
+    background-color:           transparent;
+    text-color:                 #eeeeee;
+}
+
+element selected.active {
+    background-color:           #252525;
+    text-color:                 #ffffff;
+}
+
+
+/* ============================================================
+ * ICONS
+ * ============================================================ */
+
+element-icon {
+    background-color:           transparent;
+
+    text-color:                 inherit;
+
+    size:                       22px;
+
+    cursor:                     inherit;
+}
+
+
+/* ============================================================
+ * APPLICATION TEXT
+ * ============================================================ */
+
+element-text {
+    background-color:           transparent;
+
+    text-color:                 inherit;
+
+    highlight:                  inherit;
+
+    cursor:                     inherit;
+
+    vertical-align:             0.5;
+    horizontal-align:           0.0;
+}
