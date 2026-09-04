@@ -1,0 +1,121 @@
+
+@import "colors.rasi"
+
+* {
+    background-color: transparent;
+    text-color: var(on-surface);
+    font: "Roboto Mono 11";
+}
+
+window {
+    width: 400px;
+    location: center;
+    anchor: center;
+
+    background-color: var(surface-container-lowest);
+
+    border: 0px;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 12px;
+    padding: 0px;
+
+    background-color: transparent;
+
+    children: [
+        inputbar,
+        listview
+    ];
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 10px 14px;
+
+    background-color: var(surface-container);
+
+    border: 0px;
+    border-radius: 8px;
+
+    text-color: var(on-surface);
+
+    children: [
+        prompt,
+        entry
+    ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: var(primary);
+}
+
+entry {
+    background-color: transparent;
+    text-color: var(on-surface);
+
+    placeholder: "Search...";
+    placeholder-color: var(on-surface-variant);
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+
+    spacing: 5px;
+    padding: 0px;
+
+    background-color: transparent;
+
+    scrollbar: false;
+    dynamic: true;
+}
+
+element {
+    spacing: 10px;
+    padding: 10px 12px;
+
+    background-color: transparent;
+
+    border: 0px;
+    border-radius: 7px;
+
+    text-color: var(on-surface);
+
+    cursor: pointer;
+}
+
+element normal {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element selected {
+    background-color: var(primary);
+    text-color: var(on-primary);
+}
+
+element-icon {
+    size: 22px;
+
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    handle-width: 4px;
+    handle-color: var(primary);
+
+    background-color: transparent;
+}

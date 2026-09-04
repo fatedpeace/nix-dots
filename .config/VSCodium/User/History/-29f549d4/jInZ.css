@@ -1,0 +1,49 @@
+
+* {
+    font-family: "Roboto Mono";
+    font-size: 16px;
+}
+
+window {
+    background-color: #0b0e13;
+}
+
+button {
+    background-color: #191c20;
+    color: #e1e2e8;
+
+    border: 0;
+    border-radius: 10px;
+
+    margin: 10px;
+    padding: 20px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+}
+
+button:hover {
+    background-color: #9fcafc;
+    color: #003257;
+}
+
+#lock {
+    background-image: url("/usr/share/wlogout/icons/lock.png");
+}
+
+#logout {
+    background-image: url("/usr/share/wlogout/icons/logout.png");
+}
+
+#suspend {
+    background-image: url("/usr/share/wlogout/icons/suspend.png");
+}
+
+#reboot {
+    background-image: url("/usr/share/wlogout/icons/reboot.png");
+}
+
+#shutdown {
+    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+}

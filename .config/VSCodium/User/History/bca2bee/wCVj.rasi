@@ -1,0 +1,171 @@
+
+@import "colors.rasi"
+
+configuration {
+    kb-row-up: "k";
+    kb-row-down: "j";
+    kb-row-left: "h";
+    kb-row-right: "l";
+}
+
+* {
+    background-color: transparent;
+    text-color: var(on-surface);
+    font: "Roboto Mono 11";
+}
+
+window {
+    width: 400px;
+    location: center;
+    anchor: center;
+
+    background-color: var(surface-container-lowest);
+
+    border: 0px;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+mainbox {
+    spacing: 12px;
+    padding: 0px;
+
+    background-color: transparent;
+
+    children: [
+        inputbar,
+        listview
+    ];
+}
+
+inputbar {
+    spacing: 10px;
+    padding: 10px 14px;
+
+    background-color: var(surface-container);
+
+    border: 0px;
+    border-radius: 8px;
+
+    text-color: var(on-surface);
+
+    children: [
+        prompt,
+        entry
+    ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: var(primary);
+}
+
+entry {
+    background-color: transparent;
+    text-color: var(on-surface);
+
+    placeholder: "Search...";
+    placeholder-color: var(on-surface-variant);
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+
+    spacing: 5px;
+    padding: 0px;
+
+    background-color: transparent;
+
+    scrollbar: false;
+    dynamic: true;
+}
+
+element {
+    spacing: 10px;
+    padding: 10px 12px;
+
+    background-color: transparent;
+    border: 0px;
+
+    border-radius: 7px;
+
+    text-color: var(on-surface);
+
+    cursor: pointer;
+}
+
+/* ALL UNSELECTED STATES */
+
+element normal.normal {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element normal.urgent {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element alternate.urgent {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+element alternate.active {
+    background-color: transparent;
+    text-color: var(on-surface);
+}
+
+/* SELECTED */
+
+element selected.normal {
+    background-color: var(primary);
+    text-color: var(on-primary);
+}
+
+element selected.urgent {
+    background-color: var(primary);
+    text-color: var(on-primary);
+}
+
+element selected.active {
+    background-color: var(primary);
+    text-color: var(on-primary);
+}
+
+/* ICONS */
+
+element-icon {
+    size: 22px;
+
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+
+    vertical-align: 0.5;
+}
+
+/* SCROLLBAR */
+
+scrollbar {
+    handle-width: 4px;
+    handle-color: var(primary);
+
+    background-color: transparent;
+}
