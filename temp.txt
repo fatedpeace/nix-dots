@@ -1,6 +1,40 @@
+.config/quickshell/tide 
+❯ quickshell -p .
+  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
+  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
+  INFO: Saving logs to "/run/user/1000/quickshell/by-id/ur6yu3xkt/log.qslog"
+ ERROR: Failed to load configuration
+ ERROR:   caused by @shell.qml[4:1]: module "IslandBackend" is not installed
+
+.config/quickshell/tide 
+❯ quickshell -p .
+  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
+  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
+  INFO: Saving logs to "/run/user/1000/quickshell/by-id/jx6lv3xkt/log.qslog"
+ ERROR: Failed to load configuration
+ ERROR:   caused by @shell.qml[4:1]: module "IslandBackend" is not installed
+
+.config/quickshell/tide 
+❯ cd ./build/
+
 quickshell/tide/build 
-❯ find IslandBackend -maxdepth 2 -type f
-IslandBackend/IslandBackend_qml_module_dir_map.qrc
-IslandBackend/qmldir
-IslandBackend/IslandBackend.qmltypes
-IslandBackend/libIslandBackendplugin.so
+❯ find . -name 'libIslandBackend.so*' -o name 'libIslandBackendplugin.so*'
+find: paths must precede expression: `name'
+
+quickshell/tide/build 
+❯ find . -name 'libIslandBackend.so*' -o -name 'libIslandBackendplugin.so*'
+./IslandBackend/libIslandBackendplugin.so
+./libIslandBackend.so
+
+quickshell/tide/build 
+❯ cd ..
+
+.config/quickshell/tide 
+❯ QML2_IMPORT_PATH="$PWD/build" quickshell -p .
+  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
+  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
+  INFO: Saving logs to "/run/user/1000/quickshell/by-id/s27p04xkt/log.qslog"
+ ERROR: Failed to load configuration
+ ERROR:   caused by @shell.qml[289:9]: Type DynamicIslandWindow unavailable
+ ERROR:   caused by @DynamicIslandWindow.qml[2333:21]: Type SwipeLyricsLayer unavailable
+ ERROR:   caused by @qml/island/SwipeLyricsLayer.qml[2:1]: module "Qt5Compat.GraphicalEffects" is not installed
