@@ -1,13 +1,4 @@
-quickshell/tide/build 
-❯ find . -maxdepth 3 -type f -executable
-./CMakeFiles/4.1.2/CMakeDetermineCompilerABI_CXX.bin
-./Tide-island-app/tide_island_shortcut_config_tests
-./Tide-island-app/tide-island-config-app
-./IslandBackend/libIslandBackendplugin.so
-./compositor_backend_tests
-./file_shelf_model_tests
-./bluetooth_formatting_tests
-./lyricsmpris
-./application_search_tests
-./libIslandBackend.so
-./lyricsmpris_runtime_tests
+.config/quickshell/tide 
+❯ ./build/Tide-island-app/tide-island-config-app
+QQmlApplicationEngine failed to load component
+qrc:/qt/qml/TideIsland/Main.qml:2:1: module "QtQuick.Controls" plugin "qtquickcontrols2plugin" not found
