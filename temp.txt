@@ -1,22 +1,35 @@
-❯ nix-shell -p cmake qt6.qtbase qt6.qtdeclarative qt6.qt5compat pkg-config systemd python3
-these 2 paths will be fetched (892.6 KiB download, 4.9 MiB unpacked):
-  /nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1
-  /nix/store/cg3gfndli05n1pw4f5dh57jw19g4c0pv-qt5compat-6.11.1-dev
-copying path '/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1' from 'https://cache.nixos.org'...
-copying path '/nix/store/cg3gfndli05n1pw4f5dh57jw19g4c0pv-qt5compat-6.11.1-dev' from 'https://cache.nixos.org'...
-
-~ 
-❯ cd ./.config/quickshell/tide/
 
 .config/quickshell/tide 
-❯ QML2_IMPORT_PATH="$PWD/build" quickshell -p .
-  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
-  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
-  INFO: Saving logs to "/run/user/1000/quickshell/by-id/ka7634xkt/log.qslog"
- ERROR: Failed to load configuration
- ERROR:   caused by @shell.qml[289:9]: Type DynamicIslandWindow unavailable
- ERROR:   caused by @DynamicIslandWindow.qml[2333:21]: Type SwipeLyricsLayer unavailable
- ERROR:   caused by @qml/island/SwipeLyricsLayer.qml[2:1]: module "Qt5Compat.GraphicalEffects" is not installed
+❯ find /nix/store -path '*qt5compat*' -type f \( -name '*.qml' -o -name '*.so' \) 2>/dev/null | grep -E 'GraphicalEffects|qt5compat' | head -30
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/Blend.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/BrightnessContrast.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/ColorOverlay.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/Colorize.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/ConicalGradient.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/Desaturate.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/DirectionalBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/Displace.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/DropShadow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/FastBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/GammaAdjust.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/GaussianBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/Glow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/HueSaturation.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/InnerShadow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/LevelAdjust.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/LinearGradient.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/MaskedBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/OpacityMask.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/RadialBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/RadialGradient.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/RectangularGlow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/RecursiveBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/ThresholdMask.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/ZoomBlur.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/libqtgraphicaleffectsplugin.so
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/private/DropShadowBase.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/private/FastGlow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/private/FastInnerShadow.qml
+/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml/Qt5Compat/GraphicalEffects/private/GaussianDirectionalBlur.qml
 
-.config/quickshell/tide 
-❯ 
+.config/qui
