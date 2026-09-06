@@ -1,18 +1,30 @@
-❯ git status
-On branch main
-Your branch is ahead of 'origin/main' by 2 commits.
-  (use "git push" to publish your local commits)
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   .config/mozilla/firefox/pyf37k67.default/AlternateServices.bin
-	modified:   .config/mozilla/firefox/pyf37k67.default/cookies.sqlite-wal
-	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/idb/4049743702LCo7g%sCD7a%taacbaafs.sqlite
-	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/ls/data.sqlite
-	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/ls/usage
+~/dotfiles 
+❯ git fetch origin
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (39/39), done.
+remote: Total 39 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (39/39), 16.85 KiB | 8.42 MiB/s, done.
+From github.com:fatedpeace/nix-dots
+   63c2fad..ca23189  main       -> origin/main
 
-no changes added to commit (use "git add" and/or "git commit -a")
+~/dotfiles 
+❯ git log --oneline -graph --decorate --all -10
+fatal: unrecognized argument: -graph
+
+~/dotfiles 
+❯ git log --oneline --graph --decorate --all -10
+* ca23189 (origin/main, origin/HEAD) Update temp.txt
+* 5b77c82 Update temp.txt
+* cc4fef0 Update temp.txt with error message and remove paths
+* b1ece4d Update temp.txt with executable file details
+* 9269b0b Update temp.txt
+* 8465f7a Update temp.txt with directory contents
+* 4c39fb3 Update temp.txt with QML2_IMPORT_PATH
+* 37b038d Modify temp.txt with Qt5Compat commands and errors
+* 65953d3 Remove old quickshell logs and commands
+* b60151e Fix quickshell errors and update commands
 
 ~/dotfiles 
 ❯ 
