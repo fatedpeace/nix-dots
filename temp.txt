@@ -1,26 +1,6 @@
- Could NOT find Qt6Qml (missing: Qt6Qml_DIR)
-CMake Error at CMakeLists.txt:13 (find_package):
-  Found package configuration file:
-
-    /nix/store/b1zm7dq5gf2593fmk575wgr0nvr2ngld-qtbase-6.11.1/lib/cmake/Qt6/Qt6Config.cmake
-
-  but it set Qt6_FOUND to FALSE so package "Qt6" is considered to be NOT
-  FOUND.  Reason given by package:
-
-  Failed to find required Qt component "Qml".
-
-  Expected Config file at
-  "/nix/store/b1zm7dq5gf2593fmk575wgr0nvr2ngld-qtbase-6.11.1/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake"
-  does NOT exist
-
-
-
-  Configuring with --debug-find-pkg=Qt6Qml might reveal details why the
-  package was not found.
-
-  Configuring with -DQT_DEBUG_FIND_PACKAGE=ON will print the values of some
-  of the path variables that find_package uses to try and find the package.
-
-
-
--- Configuring incomplete, errors occurred!
+quickshell/tide/build 
+❯ find IslandBackend -maxdepth 2 -type f
+IslandBackend/IslandBackend_qml_module_dir_map.qrc
+IslandBackend/qmldir
+IslandBackend/IslandBackend.qmltypes
+IslandBackend/libIslandBackendplugin.so
