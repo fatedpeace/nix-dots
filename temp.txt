@@ -1,40 +1,22 @@
-.config/quickshell/tide 
-❯ quickshell -p .
-  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
-  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
-  INFO: Saving logs to "/run/user/1000/quickshell/by-id/ur6yu3xkt/log.qslog"
- ERROR: Failed to load configuration
- ERROR:   caused by @shell.qml[4:1]: module "IslandBackend" is not installed
+❯ nix-shell -p cmake qt6.qtbase qt6.qtdeclarative qt6.qt5compat pkg-config systemd python3
+these 2 paths will be fetched (892.6 KiB download, 4.9 MiB unpacked):
+  /nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1
+  /nix/store/cg3gfndli05n1pw4f5dh57jw19g4c0pv-qt5compat-6.11.1-dev
+copying path '/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1' from 'https://cache.nixos.org'...
+copying path '/nix/store/cg3gfndli05n1pw4f5dh57jw19g4c0pv-qt5compat-6.11.1-dev' from 'https://cache.nixos.org'...
 
-.config/quickshell/tide 
-❯ quickshell -p .
-  INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
-  INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
-  INFO: Saving logs to "/run/user/1000/quickshell/by-id/jx6lv3xkt/log.qslog"
- ERROR: Failed to load configuration
- ERROR:   caused by @shell.qml[4:1]: module "IslandBackend" is not installed
-
-.config/quickshell/tide 
-❯ cd ./build/
-
-quickshell/tide/build 
-❯ find . -name 'libIslandBackend.so*' -o name 'libIslandBackendplugin.so*'
-find: paths must precede expression: `name'
-
-quickshell/tide/build 
-❯ find . -name 'libIslandBackend.so*' -o -name 'libIslandBackendplugin.so*'
-./IslandBackend/libIslandBackendplugin.so
-./libIslandBackend.so
-
-quickshell/tide/build 
-❯ cd ..
+~ 
+❯ cd ./.config/quickshell/tide/
 
 .config/quickshell/tide 
 ❯ QML2_IMPORT_PATH="$PWD/build" quickshell -p .
   INFO: Launching config: "/home/havoc/dotfiles/.config/quickshell/tide/shell.qml"
   INFO: Shell ID: "3053a700d0742d166660b0f1b86ef5db" Path ID "3053a700d0742d166660b0f1b86ef5db"
-  INFO: Saving logs to "/run/user/1000/quickshell/by-id/s27p04xkt/log.qslog"
+  INFO: Saving logs to "/run/user/1000/quickshell/by-id/ka7634xkt/log.qslog"
  ERROR: Failed to load configuration
  ERROR:   caused by @shell.qml[289:9]: Type DynamicIslandWindow unavailable
  ERROR:   caused by @DynamicIslandWindow.qml[2333:21]: Type SwipeLyricsLayer unavailable
  ERROR:   caused by @qml/island/SwipeLyricsLayer.qml[2:1]: module "Qt5Compat.GraphicalEffects" is not installed
+
+.config/quickshell/tide 
+❯ 
