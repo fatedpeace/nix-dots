@@ -1,4 +1,4 @@
-.config/quickshell/tide 
 ❯ ls
-backend  CMakeLists.txt           install.sh  lyricsmpris  qml        README.zh-CN.md  tests            tide-island.desktop  tide-island-launcher
-build    DynamicIslandWindow.qml  LICENSE     PKGBUILD     README.md  shell.qml        Tide-island-app  tide-island.install  tide-island.service
+ApplicationLauncherSettings.qml  CMakeLists.txt       CustomPage.qml    General.qml           main.cpp       RES            tests                       TlpSettings.qml
+backend.cpp                      ConfigStore.qml      Document.qml      HiddenPathDialog.qml  Main.qml       resources.qrc  Theme.qml                   Wallpaper.qml
+backend.hpp                      ConfigTextField.qml  FontSettings.qml  Interaction.qml       PagePanel.qml  Shortcut.qml   tide-island-config.desktop  WallpaperSettings.qml
