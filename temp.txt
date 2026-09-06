@@ -1,1 +1,4 @@
-QML2_IMPORT_PATH="$PWD/build:/nix/store/knxc2lffak0vqn9607ijcmhq804ipakk-qt5compat-6.11.1/lib/qt-6/qml" quickshell -p .
+.config/quickshell/tide 
+❯ ls
+backend  CMakeLists.txt           install.sh  lyricsmpris  qml        README.zh-CN.md  tests            tide-island.desktop  tide-island-launcher
+build    DynamicIslandWindow.qml  LICENSE     PKGBUILD     README.md  shell.qml        Tide-island-app  tide-island.install  tide-island.service
