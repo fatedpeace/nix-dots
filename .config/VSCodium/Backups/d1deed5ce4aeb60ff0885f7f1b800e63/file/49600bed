@@ -1,6 +1,7 @@
-file:///home/havoc/dotfiles/.config/quickshell/surface/Island.qml {"mtime":1788696064105,"ctime":1788690789582,"size":3055,"etag":"3gk313se935h","orphaned":false,"typeId":""}
+file:///home/havoc/dotfiles/.config/quickshell/surface/Island.qml {"mtime":1788732420986,"ctime":1788690789582,"size":3819,"etag":"3gk4nfk0p3u6","orphaned":false,"typeId":""}
 import Quickshell
 import QtQuick
+import "../components"
 
 PanelWindow{ // the parent, outter most
     anchors.top: true // anchors the dynamic island to top of the screen
@@ -23,9 +24,10 @@ PanelWindow{ // the parent, outter most
 
         hoverEnabled: true // makes sure that onEntered will run with just the presence of the mouse on the mouse area
 
-        onEntered: { // when curosor enters selected area
+        onEntered: { // when curosor enters selected area450
             hidetimer.stop() // stops the time, allows for the island to stay even if u take ur cursor off but put it back before timer ends
-            island.islandVisible = true // sets the property to true setting y of bar to 0, shows island when cursor goes up
+            island.islandVisible = true // sets the property to true setting y 
+            enterAnimation.start() // starts the enter animation
         }
         onExited: { //when cursor leaves the selected area
             hidetimer.start() // starts the timer
@@ -40,7 +42,8 @@ PanelWindow{ // the parent, outter most
         repeat: false // when to repeat the timer
 
         onTriggered: { // what happens when the timer is done
-            island.islandVisible = false // sets the property to false setting the y for the island to -60, basically hiding the island after time
+            island.islandVisible = false // sets the property to false 
+            exitAnimation.start() // starts the exit aimations
         }
     }
 
@@ -52,10 +55,33 @@ PanelWindow{ // the parent, outter most
         width: 250 // width for rectangle
         height: 40 // height for rectangle
         
-        radius: 60 // raidus allows for curved or strigh edges
+        radius: 100 // raidus allows for curved or strigh edges
         
         color:  "Black" // color 
         
-        y: islandVisible ? 8 : -60 // dectects the value for the property islandVisibile and if true it sets y = 8 and if false it sets it to y = -60, using 8 as indirect way to set margin bc if set via margins.top the entire panel would start 8px down which would make mouse area 8px from top of screen
+        y: -60 // hidden by default because now the y is controled by the animations
+
+        NumberAnimation {  // animations
+            id: enterAnimation // names the animation to enter animatoin
+            target: island // only targets the island(rectangle)
+            property: "y" // what is changes
+            to: 8 // what is changes the y too
+            duration: 450 // duration of animation
+            easing.type: Easing.OutCubic // animation curve
+        }        
+
+        NumberAnimation { // animations
+            id: exitAnimation // names animation to exit animation
+            target: island // affects the island
+            property: "y" // only changes the y
+            to: -60 // changes y to -60
+            duration: 350 // duration
+            easing.type: Easing.OutCubic //animation curve
+        }
+
+        Time { // brings in the time from Time.qml in components
+            anchors.centerIn: parent // anchors it to the center of its parent which in this case is the islandq
+        }
+      
     }
 }

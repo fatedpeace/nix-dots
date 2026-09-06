@@ -88,6 +88,7 @@ programs.hyprland.enable = true;
   fonts.packages = with pkgs; [
   	iosevka
 	nerd-fonts.jetbrains-mono
+	googlesans-code
 	noto-fonts-cjk-sans
 	roboto-mono
 ];

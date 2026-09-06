@@ -1,1 +1,2 @@
 {"timestamp":3671729,"category":"bounce.tracking.protection","name":"purge_action","extra":{"is_dry_run":"true","site_host":"hyprland.org","bounce_time":"1788336654","glean_timestamp":"1788693930748","success":"true"},"execution_counter":1}
+{"timestamp":81721,"category":"glean","name":"restarted","extra":{"glean_timestamp":"1788729028101","glean.startup.date":"2026-09-07T07:10+10:00"},"execution_counter":2}
