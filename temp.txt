@@ -1,12 +1,18 @@
-.config/quickshell/tide 
-❯ find /nix/store -path '*qtdeclarative*' -type d -path '*/qml/QtQuick/Controls*' 2>/dev/null | head
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/Basic
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/Basic/impl
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/dark
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/dark/images
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/icons
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/impl
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/light
-/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/light/images
+❯ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .config/mozilla/firefox/pyf37k67.default/AlternateServices.bin
+	modified:   .config/mozilla/firefox/pyf37k67.default/cookies.sqlite-wal
+	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/idb/4049743702LCo7g%sCD7a%taacbaafs.sqlite
+	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/ls/data.sqlite
+	modified:   .config/mozilla/firefox/pyf37k67.default/storage/default/https+++www.youtube.com/ls/usage
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+~/dotfiles 
+❯ 
