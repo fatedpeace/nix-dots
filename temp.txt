@@ -1,4 +1,12 @@
 .config/quickshell/tide 
-❯ ./build/Tide-island-app/tide-island-config-app
-QQmlApplicationEngine failed to load component
-qrc:/qt/qml/TideIsland/Main.qml:2:1: module "QtQuick.Controls" plugin "qtquickcontrols2plugin" not found
+❯ find /nix/store -path '*qtdeclarative*' -type d -path '*/qml/QtQuick/Controls*' 2>/dev/null | head
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/Basic
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/Basic/impl
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/dark
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/dark/images
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/icons
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/impl
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/light
+/nix/store/b6j7b0rnw3fxj8d117icwvvymw91sycl-qtdeclarative-6.11.1/lib/qt-6/qml/QtQuick/Controls/FluentWinUI3/light/images
