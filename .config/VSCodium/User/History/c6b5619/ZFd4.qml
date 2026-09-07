@@ -1,4 +1,3 @@
-file:///home/havoc/dotfiles/.config/quickshell/surface/Island.qml {"mtime":1788732420986,"ctime":1788690789582,"size":3819,"etag":"3gk4nfk0p3u6","orphaned":false,"typeId":""}
 import Quickshell
 import QtQuick
 import "../components"
@@ -53,7 +52,7 @@ PanelWindow{ // the parent, outter most
         id: island // basically names the rectangle as island so it easier to refer to later  on
 
         width: 250 // width for rectangle
-        height: 40 // height for rectangle
+        height: 50 // height for rectangle
         
         radius: 100 // raidus allows for curved or strigh edges
         
@@ -78,9 +77,13 @@ PanelWindow{ // the parent, outter most
             duration: 350 // duration
             easing.type: Easing.OutCubic //animation curve
         }
+        Row {
+            spacing: 10
+            anchors.centerIn: parent
 
-        Time { // brings in the time from Time.qml in components
-            anchors.centerIn: parent // anchors it to the center of its parent which in this case is the islandq
+
+            Time {} // brings in the time from Time.qml in components
+            MediaVisual {} // brinbgs in the media visualier.qml from components
         }
       
     }

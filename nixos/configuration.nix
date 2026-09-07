@@ -78,6 +78,8 @@ programs.hyprland.enable = true;
      vscodium
      quickshell
      firefox
+     rofi
+     wlogout
      kitty
      yazi
      awww
