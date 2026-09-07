@@ -1,0 +1,10 @@
+{
+    "explorer.confirmDelete": false,
+    "workbench.editorAssociations": {
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+        "*.qrc": "qt-core.qrcEditor"
+    },
+    "chat.editor.fontWeight": "500",
+    "workbench.statusBar.visible": false,
+    "editor.fontFamily": "'Iosevka Nerd Font Mono', monospace"
+}

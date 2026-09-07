@@ -70,6 +70,20 @@ programs.starship.enable = true;
 programs.fish.enable = true;
 programs.hyprland.enable = true;
 
+# Disable PulseAudio hardware handling so Pipewire can manage it
+hardware.pulseaudio.enable = false;
+
+# Optional but highly recommended for real-time audio priority
+security.rtkit.enable = true;
+
+# Enable PipeWire service stack
+services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true; # Emulates PulseAudio so commands like 'pactl' work
+};
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -84,6 +98,8 @@ programs.hyprland.enable = true;
      yazi
      awww
      git
+     pavucontrol
+     blueman
      eza
   ];
 
@@ -92,6 +108,8 @@ programs.hyprland.enable = true;
 	nerd-fonts.jetbrains-mono
 	googlesans-code
 	noto-fonts-cjk-sans
+	nerd-fonts.iosevka
+	nerd-fonts.iosevka-term
 	roboto-mono
 ];
 

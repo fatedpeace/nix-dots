@@ -1,8 +1,0 @@
-file:///home/havoc/dotfiles/temp.txt {"mtime":1788659906790,"ctime":1788659906790,"size":1050,"etag":"3gk180d7a12r","orphaned":false,"typeId":""}
-12/24-hour formatting — HH:mm vs hh:mm AP
-Seconds — HH:mm:ss
-Font styling — Roboto Mono, size, weight
-Positioning — understanding how the time sits inside the island
-Dynamic sizing — making the island adapt to the text
-Smooth changes — optional animation when the displayed value changes
-Reusing properties — e.g. making the format configurable instead of hardcoded
